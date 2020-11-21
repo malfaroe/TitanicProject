@@ -5,7 +5,7 @@ from functools import partial
 from scipy.optimize import fmin
 from sklearn import metrics
 
-class OptimizerACC:
+class OptimizeACC:
     """Class for optimizing Accuracy"""
 
     def __init__(self):
@@ -21,6 +21,8 @@ class OptimizerACC:
 
         #Calculate accuracy score
         acc_score = metrics.accuracy_score(y, predictions)
+        
+        return acc_score
 
     def fit(self, X,y):
         loss_partial = partial(self._acc, X = X, y = y)
